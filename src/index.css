@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "Fira Mono", "JetBrains Mono", monospace;
+  
+  --color-blue-750: #1b1fad;
+  --color-orange-150: #ffece5;
+  --color-orange-850: #cc3c10;
+}
+
+@media print {
+  /* Hide all elements on the screen */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  header, footer, nav, button, .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Make only the print resume element visible and positioned perfectly */
+  #printable-resume-container {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    color: black !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  /* Style headings to render dark and clean for printing */
+  #printable-resume-container * {
+    visibility: visible !important;
+    color-scheme: light !important;
+  }
+  
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+}
